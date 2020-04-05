@@ -3,6 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import 'nprogress/nprogress.css';
+import Vuelidate from "vuelidate/src";
+
+Vue.use(Vuelidate);
 
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue';
 

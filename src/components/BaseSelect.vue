@@ -1,7 +1,10 @@
 <template>
     <div>
         <label v-if="label">{{ label }}</label>
-        <input type="text" :value="value" @input="updateValue" v-bind="$attrs" class="form-control"/>
+
+        <select class="form-control" :value="value" @input="updateValue" v-bind="$attrs">
+            <option v-for="option in options" :key="option" :selected="option === value">{{ option }}</option>
+        </select>
     </div>
 </template>
 
@@ -15,6 +18,10 @@
                 default: ''
             },
             value: [String, Number],
+            options: {
+                type: Array,
+                required: true,
+            }
         },
         methods: {
             updateValue(event) {
